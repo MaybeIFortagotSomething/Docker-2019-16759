@@ -1,9 +1,5 @@
-FROM co0ontty/cve-2019-16759
+FROM dinastyh/ctf2
 
-RUN useradd -m user && printf "bob\nbob\n" | passwd user
-RUN printf "JeNeSuisPasVenueIciPourSouffir\nJeNeSuisPasVenueIciPourSouffir\n" | passwd root
-
-RUN echo "IKnowTheWebSiteIsReallyFast" >> ~/flag.txt
-
+RUN echo "%www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 EXPOSE 80
